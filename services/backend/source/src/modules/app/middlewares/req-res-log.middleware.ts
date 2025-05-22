@@ -35,7 +35,7 @@ export class ReqResLogMiddleware implements NestMiddleware {
         type: "res",
         baseUrl,
         method,
-        path: res?.req?.route?.path || req.path,
+        path: req.path,
         statusCode: res.statusCode,
         responseTime: Date.now() - reqAt,
       };

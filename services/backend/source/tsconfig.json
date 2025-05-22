@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "noEmitOnError": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "es2022",
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": ["env.d.ts", "src/**/*", "lib/**/*", "test/**/*"],
+  "exclude": ["node_modules", "dist"],
+
+  // required by mikro-orm-esm cli
+  "ts-node": {
+    "esm": true,
+    "transpileOnly": true
+  }
+}

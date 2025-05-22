@@ -1,0 +1,63 @@
+x-common-env: &common-env
+  NEST_DEBUG: ${NEST_DEBUG}
+  NPM_CONFIG_LOGLEVEL: ${NPM_CONFIG_LOGLEVEL}
+  NODE_ENV: ${NODE_ENV}
+
+volumes:
+  kraftapp_db_data:
+    name: "kraftapp_db_data"
+  kraftapp_db_log:
+    name: "kraftapp_db_log"
+
+networks:
+  public: null
+
+services:
+  kraftapp-frontend:
+    container_name: kraftapp-frontend
+    depends_on:
+      - kraftapp-backend
+    environment:
+      <<: *common-env
+      VITE_HOST_ENV: ${FRONTEND_VITE_HOST_ENV}
+    networks:
+      - public
+    restart: unless-stopped
+
+  kraftapp-backend:
+    container_name: kraftapp-backend
+    depends_on:
+      - kraftapp-db
+    environment:
+      <<: *common-env
+      MIKRO_ORM_NO_COLOR: true
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_PASS: ${DB_PASS}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      JWT_ACCESS_SECRET: ${BACKEND_JWT_ACCESS_SECRET}
+      JWT_REFRESH_SECRET: ${BACKEND_JWT_REFRESH_SECRET}
+      NO_COLOR: ${BACKEND_NO_COLOR}
+    expose:
+      - 3000
+    networks:
+      - public
+    tty: true
+    restart: unless-stopped
+
+  kraftapp-db:
+    container_name: kraftapp-db
+    command: postgres -c log_statement=all
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_USER: ${DB_USER}
+    expose:
+      - ${DB_PORT}
+    image: postgres:17.5
+    networks:
+      - public
+    volumes:
+      - kraftapp_db_data:/var/lib/postgresql/data
+      - kraftapp_db_log:/var/log/postgresql

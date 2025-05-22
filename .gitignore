@@ -1,0 +1,23 @@
+# Visual Studio Code
+.history
+.vscode/settings.json
+
+# Docker
+docker-compose.override.yml
+docker-compose.prod.yml
+
+# Node.js dependencies and build artifacts
+node_modules
+build
+dist
+temp
+tmp
+
+# Environment variables
+.env
+
+# Frontend client artifacts
+.openapi-generator
+
+# macOS
+.DS_Store

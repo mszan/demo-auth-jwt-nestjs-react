@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "backend/test:watch",
+            "command": "open http://localhost:7004/__vitest__/ && docker exec -it kraftapp-backend npm run test:watch",
+            "group": "test",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "new"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "backend/test:coverage",
+            "command": "docker exec -it kraftapp-backend npm run test:coverage && open ${workspaceFolder}/services/backend/source/test/coverage/index.html",
+            "group": "test",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "new"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "backend/type-check",
+            "command": "docker exec kraftapp-backend npm run type-check",
+            "group": "build"
+        }
+    ]
+}

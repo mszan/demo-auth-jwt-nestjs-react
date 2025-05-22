@@ -1,0 +1,30 @@
+networks:
+  public: null
+
+services:
+  kraftapp-frontend:
+    image: node:lts
+    working_dir: /opt/source
+    entrypoint: "/opt/entrypoint.dev.sh"
+    volumes:
+      - ./services/frontend/source:/opt/source
+      - ./services/frontend/entrypoint.dev.sh:/opt/entrypoint.dev.sh
+    ports:
+      - 7000:5173
+
+  kraftapp-backend:
+    image: node:lts
+    entrypoint: "/opt/entrypoint.dev.sh"
+    working_dir: /opt/source
+    volumes:
+      - ./services/backend/source:/opt/source
+      - ./services/backend/entrypoint.dev.sh:/opt/entrypoint.dev.sh
+    ports:
+      - 7001:3000
+      - 7002:9000 # node debugger
+      - 7003:9001 # node debugger test
+      - 7004:51204 # vitest ui
+
+  kraftapp-db:
+    ports:
+      - "7005:${DB_PORT}"

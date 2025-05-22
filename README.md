@@ -6,5 +6,5 @@
 -   add tests
 -   rethink certificates
 -   rework vsc tasks
--   note about kill-port
 -   cicd tests
+-   add note about stuck vitest ui ports

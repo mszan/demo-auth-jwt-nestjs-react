@@ -4,17 +4,7 @@
         {
             "type": "shell",
             "label": "backend/test:watch",
-            "command": "open http://localhost:7004/__vitest__/ && docker exec -it kraftapp-backend npm run test:watch",
-            "group": "test",
-            "presentation": {
-                "reveal": "silent",
-                "panel": "new"
-            }
-        },
-        {
-            "type": "shell",
-            "label": "backend/test:coverage",
-            "command": "docker exec -it kraftapp-backend npm run test:coverage && open ${workspaceFolder}/services/backend/source/test/coverage/index.html",
+            "command": "open http://localhost:7013/__vitest__/ && docker exec -it kraftapp-backend npm run test:watch",
             "group": "test",
             "presentation": {
                 "reveal": "silent",

@@ -5,7 +5,7 @@
             "name": "kraftapp-backend (for watch)",
             "type": "node",
             "address": "localhost",
-            "port": 7002,
+            "port": 7010,
             "localRoot": "${workspaceFolder}/services/backend/source/src",
             "remoteRoot": "/opt/source/src",
             "request": "attach",
@@ -15,7 +15,7 @@
             "name": "kraftapp-backend (for test)",
             "type": "node",
             "address": "localhost",
-            "port": 7003,
+            "port": 7011,
             "localRoot": "${workspaceFolder}/services/backend/source",
             "remoteRoot": "/opt/source",
             "request": "attach",
@@ -25,7 +25,7 @@
             "name": "kraftapp-frontend (launch chrome)",
             "request": "launch",
             "type": "chrome",
-            "url": "http://localhost:7000",
+            "url": "http://localhost:7001",
             "webRoot": "${workspaceFolder}/services/frontend/source/src",
             "sourceMaps": true
         }

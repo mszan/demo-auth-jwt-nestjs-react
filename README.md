@@ -6,3 +6,5 @@
 -   add tests
 -   rethink certificates
 -   rework vsc tasks
+-   note about kill-port
+-   cicd tests

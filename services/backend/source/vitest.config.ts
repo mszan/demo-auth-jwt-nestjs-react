@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => ({
     env: loadEnv(mode, process.cwd(), ""),
     api: {
       host: "0.0.0.0",
+      strictPort: true,
     },
     coverage: {
       reportsDirectory: "./test/coverage",

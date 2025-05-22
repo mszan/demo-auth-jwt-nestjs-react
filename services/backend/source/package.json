@@ -8,8 +8,7 @@
     "build": "tsc --build tsconfig.json",
     "format": "prettier --write .",
     "start": "mikro-orm-esm migration:up && node dist/src/index.js",
-    "test:coverage": "vitest run --coverage",
-    "test:watch": "vitest --ui",
+    "test:watch": "kill-port 4000 && vitest --api.port 4000 --coverage --ui",
     "test:debug": "vitest --no-file-parallelism --inspect-brk=0.0.0.0:9001",
     "type-check": "tsc --noEmit --skipLibCheck",
     "watch": "tsx watch --inspect=0.0.0.0:9000 --clear-screen=false src/index.ts"
@@ -58,6 +57,7 @@
     "@vitest/coverage-v8": "^3.1.2",
     "@vitest/ui": "^3.0.9",
     "node-mocks-http": "1.17.2",
+    "kill-port": "2.0.1",
     "supertest": "7.1.0",
     "tsx": "4.19.3",
     "typescript": "5.8.2",

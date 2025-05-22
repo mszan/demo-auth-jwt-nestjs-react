@@ -15,6 +15,9 @@ export default defineConfig(({ mode }) => ({
         "**/*.module.ts",
         "**/orm/migrations/*",
         "**/orm/seeder/*",
+
+        // remove when e2e tests are added
+        "src/index.ts",
       ],
     },
   },

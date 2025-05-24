@@ -5,7 +5,7 @@ import * as bcrypt from "bcrypt";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { UserEntity } from "../schema/entities/user.entity.js";
-import { UserRole } from "../schema/interfaces/user-role.js";
+import { UserRole } from "../schema/enums/user-role.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 

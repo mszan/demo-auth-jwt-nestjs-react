@@ -16,6 +16,10 @@ export default defineConfig(({ mode }) => ({
         "**/orm/migrations/*",
         "**/orm/seeder/*",
 
+        // dtos should be unit tested only if they contain some additional logic, ignoring them for now since it's a quick demo
+        // in a real world scenario, we would need to organize testable and non-testable dtos in some readable way
+        "**/dto/*",
+
         // remove when e2e tests are added
         "src/index.ts",
       ],

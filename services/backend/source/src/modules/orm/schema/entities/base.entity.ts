@@ -1,13 +1,13 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
 
 export interface BaseInterface {
-  id: string;
+  uuid: string;
 }
 
 @Entity({ abstract: true })
 export abstract class BaseEntity implements BaseInterface {
   @PrimaryKey({ type: "uuid", defaultRaw: "uuid_generate_v4()" })
-  id!: string;
+  uuid!: string;
 
   @Property({
     columnType: "timestamp(0)",

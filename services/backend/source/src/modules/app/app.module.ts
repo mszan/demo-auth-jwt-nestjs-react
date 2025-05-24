@@ -4,9 +4,10 @@ import { ConfigModule } from "../config/config.module.js";
 import { AppController } from "./controllers/app.controller.js";
 import { ExceptionFilter } from "./exceptions/filters/exception.filter.js";
 import { ReqResLogMiddleware } from "./middlewares/req-res-log.middleware.js";
+import { AuthModule } from "../auth/auth.module.js";
 
 @Module({
-  imports: [ConfigModule],
+  imports: [ConfigModule, AuthModule],
   providers: [
     {
       provide: APP_FILTER,

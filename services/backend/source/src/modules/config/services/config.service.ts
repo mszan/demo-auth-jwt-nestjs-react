@@ -1,4 +1,3 @@
-// src/config/config.service.ts
 import { Injectable } from "@nestjs/common";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
@@ -58,14 +57,24 @@ export class ConfigService {
         ...this.getBaseConfig(NodeEnv.LOCAL),
         // ...
       },
-      [NodeEnv.STAGING]: {
-        ...this.getBaseConfig(NodeEnv.STAGING),
-        // ...
-      },
-      [NodeEnv.PRODUCTION]: {
-        ...this.getBaseConfig(NodeEnv.PRODUCTION),
-        // ...
-      },
+      [NodeEnv.STAGING]: _.merge(this.getBaseConfig(NodeEnv.STAGING), {
+        auth: {
+          jwt: {
+            accessToken: {
+              ignoreExpiration: false,
+            },
+          },
+        },
+      } as Partial<Config>),
+      [NodeEnv.PRODUCTION]: _.merge(this.getBaseConfig(NodeEnv.PRODUCTION), {
+        auth: {
+          jwt: {
+            accessToken: {
+              ignoreExpiration: false,
+            },
+          },
+        },
+      } as Partial<Config>),
     };
 
     this.config = this.getConfigInstance();

@@ -1,6 +1,6 @@
 import { Entity, EntityRepositoryType, Enum, Property } from "@mikro-orm/core";
 import { v4 as uuid } from "uuid";
-import { UserRole } from "../interfaces/user-role.js";
+import { UserRole } from "../enums/user-role.js";
 import { UserEntityRepository } from "../repositories/user.repository.js";
 import { BaseEntity } from "./base.entity.js";
 
@@ -33,7 +33,7 @@ export class UserEntity extends BaseEntity {
   static createFixture(override: Partial<UserEntity> = {}): UserEntity {
     const user = new UserEntity();
     Object.assign(user, {
-      id: uuid(),
+      uuid: uuid(),
       ...override,
     });
     return user;

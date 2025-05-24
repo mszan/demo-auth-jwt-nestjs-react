@@ -71,7 +71,7 @@ export class AuthService {
 
     let hashedRefreshToken = null;
     if (refreshToken) {
-      hashedRefreshToken = bcrypt.hashSync(refreshToken, 10);
+      hashedRefreshToken = await bcrypt.hash(refreshToken, 10);
     }
 
     userEntityRef.refreshToken = hashedRefreshToken;

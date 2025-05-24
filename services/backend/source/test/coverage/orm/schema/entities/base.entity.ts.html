@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -87,54 +87,54 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Entity, PrimaryKey, Property } from "@mikro-orm/core";<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
 &nbsp;
 export interface BaseInterface {
-  id: string;
+  uuid: string;
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >@Entity({ abstract: true })</span>
-<span class="cstat-no" title="statement not covered" >export abstract class BaseEntity implements BaseInterface {</span>
-<span class="cstat-no" title="statement not covered" >  @PrimaryKey({ type: "uuid", defaultRaw: "uuid_generate_v4()" })</span>
-<span class="cstat-no" title="statement not covered" >  id!: string;</span>
+@Entity({ abstract: true })
+export abstract class BaseEntity implements BaseInterface {
+  @PrimaryKey({ type: "uuid", defaultRaw: "uuid_generate_v4()" })
+  uuid!: string;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  @Property({</span>
-<span class="cstat-no" title="statement not covered" >    columnType: "timestamp(0)",</span>
-<span class="cstat-no" title="statement not covered" >    defaultRaw: "CURRENT_TIMESTAMP",</span>
-<span class="cstat-no" title="statement not covered" >    nullable: false,</span>
-<span class="cstat-no" title="statement not covered" >  })</span>
-<span class="cstat-no" title="statement not covered" >  createdAt: Date = new Date();</span>
+  @Property({
+    columnType: "timestamp(0)",
+    defaultRaw: "CURRENT_TIMESTAMP",
+    nullable: false,
+  })
+  createdAt: Date = new Date();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  @Property({</span>
-<span class="cstat-no" title="statement not covered" >    columnType: "timestamp(0)",</span>
-<span class="cstat-no" title="statement not covered" >    onUpdate: () =&gt; new Date(),</span>
-<span class="cstat-no" title="statement not covered" >  })</span>
-<span class="cstat-no" title="statement not covered" >  updatedAt: Date = new Date();</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  @Property({
+    columnType: "timestamp(0)",
+    onUpdate: <span class="fstat-no" title="function not covered" >() =&gt; new Date(),</span>
+  })
+  updatedAt: Date = new Date();
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -142,7 +142,7 @@ export interface BaseInterface {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-22T13:16:52.615Z
+                at 2025-05-24T13:26:21.302Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

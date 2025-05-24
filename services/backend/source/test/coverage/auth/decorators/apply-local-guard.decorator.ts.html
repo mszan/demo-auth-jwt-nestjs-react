@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for app/middlewares/req-res-log.middleware.ts</title>
+    <title>Code coverage report for auth/decorators/apply-local-guard.decorator.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">app/middlewares</a> req-res-log.middleware.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">auth/decorators</a> apply-local-guard.decorator.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/25</span>
+                <span class='fraction'>33/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/25</span>
+                <span class='fraction'>33/33</span>
             </div>
         
             
@@ -104,25 +104,9 @@
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,19 +116,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -153,62 +124,67 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable, Logger, NestMiddleware } from "@nestjs/common";
-import { NextFunction, Request, Response } from "express";
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { applyDecorators, ForbiddenException, UseGuards } from "@nestjs/common";
+import { ApiResponse } from "@nestjs/swagger";
+import {
+  exceptionDataSet,
+  InternalException,
+  JwtExpiredException,
+  JwtMalformedException,
+  JwtMissingException,
+  UnauthorizedException,
+} from "../../app/exceptions/exceptions.js";
+import { LocalGuard } from "../guards/local.guard.js";
 &nbsp;
-type ReqLog = {
-  type: "req";
-  method: string;
-  baseUrl: string;
-};
-&nbsp;
-type ResLog = {
-  type: "res";
-  baseUrl: string;
-  method: string;
-  path: string;
-  statusCode: number;
-  responseTime: number;
-};
-&nbsp;
-export const RESPONSE_ERROR_SYMBOL = Symbol("RESPONSE_ERROR");
-&nbsp;
-/** Logger for HTTP requests and responses. */
-@Injectable()
-export class ReqResLogMiddleware implements NestMiddleware {
-  private readonly logger = new Logger(ReqResLogMiddleware.name);
-&nbsp;
-  async use(req: Request, res: Response, next: NextFunction): Promise&lt;void&gt; {
-    const reqAt = Date.now();
-    const { method, baseUrl } = req;
-    const reqLog: ReqLog = { type: "req", method, baseUrl };
-&nbsp;
-    this.logger.log(reqLog);
-&nbsp;
-    res.on("close", async () =&gt; {
-      const resLog: ResLog = {
-        type: "res",
-        baseUrl,
-        method,
-        path: req.path,
-        statusCode: res.statusCode,
-        responseTime: Date.now() - reqAt,
-      };
-&nbsp;
-      this.logger.log(resLog);
-    });
-&nbsp;
-    next();
-    return;
-  }
+export function ApplyLocalGuard() {
+  return applyDecorators(
+    ApiResponse({
+      status: exceptionDataSet.INTERNAL.httpStatus,
+      type: InternalException,
+    }),
+    ApiResponse({
+      status: exceptionDataSet.UNAUTHORIZED.httpStatus,
+      type: UnauthorizedException,
+    }),
+    ApiResponse({
+      status: exceptionDataSet.FORBIDDEN.httpStatus,
+      type: ForbiddenException,
+    }),
+    ApiResponse({
+      status: exceptionDataSet.JWT_MALFORMED.httpStatus,
+      type: JwtMalformedException,
+    }),
+    ApiResponse({
+      status: exceptionDataSet.JWT_EXPIRED.httpStatus,
+      type: JwtExpiredException,
+    }),
+    ApiResponse({
+      status: exceptionDataSet.JWT_MISSING.httpStatus,
+      type: JwtMissingException,
+    }),
+    UseGuards(LocalGuard)
+  );
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -217,7 +193,7 @@ export class ReqResLogMiddleware implements NestMiddleware {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-22T13:16:52.615Z
+                at 2025-05-24T13:26:21.302Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

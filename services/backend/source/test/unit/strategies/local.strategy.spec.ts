@@ -23,7 +23,7 @@ describe(LocalStrategy.name, () => {
   it("should return the user entity if the username and password are valid", async () => {
     const userEntity = UserEntity.createFixture({
       username: "imUser",
-      password: bcrypt.hashSync("Test@1234", 10),
+      password: await bcrypt.hash("Test@1234", 10),
       roles: [UserRole.USER],
     });
 
@@ -45,7 +45,7 @@ describe(LocalStrategy.name, () => {
   it("should throw unauthorized if the password is invalid", async () => {
     const userEntity = UserEntity.createFixture({
       username: "imUser",
-      password: bcrypt.hashSync("Test@1234", 10),
+      password: await bcrypt.hash("Test@1234", 10),
       roles: [UserRole.USER],
     });
 

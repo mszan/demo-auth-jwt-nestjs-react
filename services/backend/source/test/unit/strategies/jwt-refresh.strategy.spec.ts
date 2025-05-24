@@ -80,7 +80,7 @@ describe(JwtRefreshStrategy.name, () => {
 
   it("should throw forbidden if the refresh token does not match the one in the database", async () => {
     const userEntity = UserEntity.createFixture({
-      refreshToken: bcrypt.hashSync("refresh-token-in-db", 10),
+      refreshToken: await bcrypt.hash("refresh-token-in-db", 10),
     });
 
     mockUserEntityRepository.findOne.mockResolvedValue(userEntity);
@@ -101,7 +101,7 @@ describe(JwtRefreshStrategy.name, () => {
 
   it("should return the user entity if the refresh token matches", async () => {
     const userEntity = UserEntity.createFixture({
-      refreshToken: bcrypt.hashSync("valid-refresh-token", 10),
+      refreshToken: await bcrypt.hash("valid-refresh-token", 10),
     });
 
     mockUserEntityRepository.findOne.mockResolvedValue(userEntity);

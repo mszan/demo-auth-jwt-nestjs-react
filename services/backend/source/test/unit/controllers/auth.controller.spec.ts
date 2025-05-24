@@ -27,7 +27,7 @@ describe(AuthController.name, () => {
 
     userEntityFixture = UserEntity.createFixture({
       username: "imUser",
-      password: bcrypt.hashSync("Test@1234", 10),
+      password: await bcrypt.hash("Test@1234", 10),
       roles: [UserRole.USER],
     });
 

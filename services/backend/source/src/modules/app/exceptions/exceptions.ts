@@ -13,6 +13,7 @@ export enum ExceptionCode {
   INTERNAL = "INTERNAL",
   NOT_FOUND = "NOT_FOUND",
   UNAUTHORIZED = "UNAUTHORIZED",
+  JWT_MISSING = "JWT_MISSING",
   JWT_EXPIRED = "JWT_EXPIRED",
   JWT_MALFORMED = "JWT_MALFORMED",
 }
@@ -33,15 +34,20 @@ export const exceptionDataSet: { [x in ExceptionCode]: ExceptionData } = {
     exceptionCode: ExceptionCode.UNAUTHORIZED,
     message: "Unauthorized.",
   },
-  JWT_EXPIRED: {
-    httpStatus: HttpStatus.FORBIDDEN,
-    exceptionCode: ExceptionCode.JWT_EXPIRED,
-    message: "JWT expired.",
-  },
   NOT_FOUND: {
     httpStatus: HttpStatus.NOT_FOUND,
     exceptionCode: ExceptionCode.NOT_FOUND,
     message: "Resource not found.",
+  },
+  JWT_MISSING: {
+    httpStatus: HttpStatus.UNAUTHORIZED,
+    exceptionCode: ExceptionCode.JWT_MISSING,
+    message: "JWT missing.",
+  },
+  JWT_EXPIRED: {
+    httpStatus: HttpStatus.FORBIDDEN,
+    exceptionCode: ExceptionCode.JWT_EXPIRED,
+    message: "JWT expired.",
   },
   JWT_MALFORMED: {
     httpStatus: HttpStatus.BAD_REQUEST,
@@ -132,5 +138,6 @@ export const NotFoundException = ExceptionsMap.NOT_FOUND;
 export const InternalException = ExceptionsMap.INTERNAL;
 export const UnauthorizedException = ExceptionsMap.UNAUTHORIZED;
 export const ForbiddenException = ExceptionsMap.FORBIDDEN;
+export const JwtMissingException = ExceptionsMap.JWT_MISSING;
 export const JwtExpiredException = ExceptionsMap.JWT_EXPIRED;
 export const JwtMalformedException = ExceptionsMap.JWT_MALFORMED;

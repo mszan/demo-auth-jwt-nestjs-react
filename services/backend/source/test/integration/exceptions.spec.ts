@@ -8,7 +8,10 @@ import {
 import { Test, TestingModule } from "@nestjs/testing";
 import { afterEach } from "node:test";
 import { beforeEach, describe, expect, it } from "vitest";
-import { exceptionDataSet, NotFoundException } from "../../src/modules/app/exceptions/exceptions.js";
+import {
+  exceptionDataSet,
+  NotFoundException,
+} from "../../src/modules/app/exceptions/exceptions.js";
 
 @Controller("dummy")
 class DummyController {
@@ -28,7 +31,7 @@ describe("exceptions", () => {
   let document: OpenAPIObject;
 
   beforeEach(async () => {
-    const testingModule: TestingModule = await Test.createTestingModule({
+    const testingModule = await Test.createTestingModule({
       controllers: [DummyController],
     }).compile();
 

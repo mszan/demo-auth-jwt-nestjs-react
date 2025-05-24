@@ -21,7 +21,7 @@ describe(ReqResLogMiddleware.name, () => {
   beforeEach(async () => {
     vi.clearAllMocks();
 
-    const testingModule: TestingModule = await Test.createTestingModule({
+    const testingModule = await Test.createTestingModule({
       controllers: [],
       providers: [ReqResLogMiddleware],
     }).compile();

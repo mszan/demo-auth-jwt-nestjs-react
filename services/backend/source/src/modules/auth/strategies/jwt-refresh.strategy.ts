@@ -68,7 +68,7 @@ export class JwtRefreshStrategy extends PassportStrategy(
 
     const rawRefreshToken = jwtExtractor(req)!; // we're sure the token is not null, see method description
 
-    if (!bcrypt.compareSync(rawRefreshToken, userEntity.refreshToken)) {
+    if (!(await bcrypt.compare(rawRefreshToken, userEntity.refreshToken))) {
       this.logger.debug(
         "Provided refresh token does not match with the one stored in a database."
       );

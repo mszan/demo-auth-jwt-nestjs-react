@@ -8,3 +8,7 @@
 -   rework vsc tasks
 -   cicd tests
 -   add note about stuck vitest ui ports
+-   http-only cookie
+-   token blacklist note
+-   user active state note
+-   cleanup mocks in tests

@@ -10,7 +10,10 @@ services:
       - ./services/frontend/source:/opt/source
       - ./services/frontend/entrypoint.dev.sh:/opt/entrypoint.dev.sh
     ports:
-      - 7000:5173
+      - 7030:5173
+      - 7031:9000 # node debugger
+      - 7032:9001 # node debugger test
+      - 7033:4000 # vitest ui
 
   kraftapp-backend:
     image: node:lts

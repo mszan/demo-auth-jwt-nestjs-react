@@ -2,11 +2,11 @@ import { JwtModule } from "@nestjs/jwt";
 import { Test } from "@nestjs/testing";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mock } from "vitest-mock-extended";
-import { AuthService } from "../../../src/modules/auth/auth.service.js";
 import { ConfigService } from "../../../src/modules/config/services/config.service.js";
 import { UserEntity } from "../../../src/modules/orm/schema/entities/user.entity.js";
 import { UserRole } from "../../../src/modules/orm/schema/enums/user-role.js";
 import { UserEntityRepository } from "../../../src/modules/orm/schema/repositories/user.repository.js";
+import { AuthService } from "../../../src/modules/auth/services/auth.service.js";
 
 // Mock the MikroORM wrap function at the module level
 vi.mock("@mikro-orm/core", async () => {
@@ -36,11 +36,11 @@ describe(AuthService.name, () => {
     };
 
     mockUserEntityRepository = mock<UserEntityRepository>({
-      getReference: vi.fn().mockImplementation((uuid) => {
-        const mockUser = new UserEntity();
-        mockUser.uuid = uuid;
-        return mockUser;
-      }),
+      getReference: vi.fn().mockImplementation((uuid) =>
+        UserEntity.createFixture({
+          uuid,
+        })
+      ),
       getEntityManager: vi.fn().mockReturnValue(mockEntityManager),
     });
 
@@ -84,7 +84,7 @@ describe(AuthService.name, () => {
   describe(AuthService.prototype["generateUserTokens"], () => {
     it("should generate access and refresh tokens for the user", async () => {
       const user: Pick<UserEntity, "uuid" | "username" | "roles"> = {
-        uuid: "user-uuid",
+        uuid: "a1",
         username: "testuser",
         roles: [UserRole.USER],
       };
@@ -110,7 +110,7 @@ describe(AuthService.name, () => {
 
   describe(AuthService.prototype["updateRefreshTokenInDb"], () => {
     it("should update the refresh token for the user", async () => {
-      const userUuid = "test-uuid";
+      const userUuid = "a1";
       const refreshToken = "new-refresh-token";
 
       await service["updateRefreshTokenInDb"](userUuid, refreshToken);
@@ -127,7 +127,7 @@ describe(AuthService.name, () => {
     });
 
     it("should set refresh token to null if provided", async () => {
-      const userUuid = "test-uuid";
+      const userUuid = "a1";
 
       await service["updateRefreshTokenInDb"](userUuid, null);
 

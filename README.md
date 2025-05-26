@@ -13,3 +13,5 @@
 -   user active state note
 -   cleanup mocks in tests
 -   make initial migrations
+-   package version cleanup, upgrade
+-   add refresh func to frontend

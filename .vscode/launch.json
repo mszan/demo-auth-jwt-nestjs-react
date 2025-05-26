@@ -25,7 +25,7 @@
             "name": "kraftapp-frontend (launch chrome)",
             "request": "launch",
             "type": "chrome",
-            "url": "http://localhost:7001",
+            "url": "http://localhost:7031",
             "webRoot": "${workspaceFolder}/services/frontend/source/src",
             "sourceMaps": true
         }

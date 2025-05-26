@@ -1,20 +1,16 @@
-import * as jwt from "jsonwebtoken";
+import { ExecutionContext } from "@nestjs/common";
+import { Reflector } from "@nestjs/core";
+import httpMocks from "node-mocks-http";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { JwtGuard } from "../../../src/modules/auth/guards/jwt.guard.js";
+import { mock } from "vitest-mock-extended";
 import {
   ForbiddenException,
-  JwtExpiredException,
   JwtMalformedException,
-  JwtMissingException,
   UnauthorizedException,
 } from "../../../src/modules/app/exceptions/exceptions.js";
-import { Reflector } from "@nestjs/core";
-import { mock } from "vitest-mock-extended";
-import { ExecutionContext } from "@nestjs/common";
-import httpMocks from "node-mocks-http";
-import { UserRole } from "../../../src/modules/orm/schema/enums/user-role.js";
+import { JwtGuard } from "../../../src/modules/auth/guards/jwt.guard.js";
 import { JwtPayload } from "../../../src/modules/auth/strategies/jwt.strategy.js";
-import { UserEntity } from "../../../src/modules/orm/schema/entities/user.entity.js";
+import { UserRole } from "../../../src/modules/orm/schema/enums/user-role.js";
 
 const mockReflector = mock<Reflector>();
 const mockExecutionContextGetRequest = vi.fn();

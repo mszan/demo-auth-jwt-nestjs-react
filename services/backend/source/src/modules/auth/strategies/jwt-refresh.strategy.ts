@@ -13,7 +13,8 @@ import bcrypt from "bcrypt";
 import { UserEntity } from "../../orm/schema/entities/user.entity.js";
 
 export type JwtRefreshPayload = {
-  sub: string; // subject - user uuid
+  /** subject - user uuid in this case */
+  sub: string;
 };
 
 const jwtExtractor = ExtractJwt.fromAuthHeaderAsBearerToken(); // todo: a bit insecure, change the extractor

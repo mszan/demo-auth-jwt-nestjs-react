@@ -5,7 +5,8 @@ import { ConfigService } from "../../config/services/config.service.js";
 import { UserRole } from "../../orm/schema/enums/user-role.js";
 
 export type JwtPayload = {
-  sub: string; // subject - user uuid
+  /** subject - user uuid in this case */
+  sub: string;
   username: string;
   roles: UserRole[];
 };

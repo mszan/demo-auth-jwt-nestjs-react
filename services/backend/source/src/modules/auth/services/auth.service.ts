@@ -1,13 +1,12 @@
-import { MikroORM, wrap } from "@mikro-orm/core";
-import { ForbiddenException, Inject, Injectable, Logger } from "@nestjs/common";
+import { wrap } from "@mikro-orm/core";
+import { Inject, Injectable, Logger } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import bcrypt from "bcrypt";
-import { ConfigService } from "../config/services/config.service.js";
-import { UserEntity } from "../orm/schema/entities/user.entity.js";
-import { JwtRefreshPayload } from "./strategies/jwt-refresh.strategy.js";
-import { JwtPayload } from "./strategies/jwt.strategy.js";
-import { UserEntityRepository } from "../orm/schema/repositories/user.repository.js";
-import { InternalException } from "../app/exceptions/exceptions.js";
+import { ConfigService } from "../../config/services/config.service.js";
+import { UserEntity } from "../../orm/schema/entities/user.entity.js";
+import { UserEntityRepository } from "../../orm/schema/repositories/user.repository.js";
+import { JwtRefreshPayload } from "../strategies/jwt-refresh.strategy.js";
+import { JwtPayload } from "../strategies/jwt.strategy.js";
 
 @Injectable()
 export class AuthService {

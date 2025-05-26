@@ -1,15 +1,15 @@
 import { GUARDS_METADATA } from "@nestjs/common/constants.js";
 import { Reflector } from "@nestjs/core";
 import { PassportModule } from "@nestjs/passport";
-import { Test, TestingModule } from "@nestjs/testing";
+import { Test } from "@nestjs/testing";
 import * as bcrypt from "bcrypt";
 import httpMocks from "node-mocks-http";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mock, mockFn, MockProxy } from "vitest-mock-extended";
-import { AuthController } from "../../../src/modules/auth/auth.controller.js";
-import { AuthService } from "../../../src/modules/auth/auth.service.js";
+import { AuthController } from "../../../src/modules/auth/controllers/auth.controller.js";
 import { JwtRefreshGuard } from "../../../src/modules/auth/guards/jwt-refresh.guard.js";
 import { LocalGuard } from "../../../src/modules/auth/guards/local.guard.js";
+import { AuthService } from "../../../src/modules/auth/services/auth.service.js";
 import { UserEntity } from "../../../src/modules/orm/schema/entities/user.entity.js";
 import { UserRole } from "../../../src/modules/orm/schema/enums/user-role.js";
 import { UserEntityRepository } from "../../../src/modules/orm/schema/repositories/user.repository.js";

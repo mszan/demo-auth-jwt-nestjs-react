@@ -2,11 +2,11 @@ import { ExecutionContext } from "@nestjs/common";
 import httpMocks from "node-mocks-http";
 import { beforeEach, describe, expect, it, Mock, vi } from "vitest";
 import { InternalException } from "../../../src/modules/app/exceptions/exceptions.js";
-import { decoratorCallback } from "../../../src/modules/auth/decorators/jwt-payload.decorator.js";
-import { JwtPayload as TJwtPayload } from "../../../src/modules/auth/strategies/jwt.strategy.js";
+import { decoratorCallback } from "../../../src/modules/auth/decorators/get-jwt-payload.decorator.js";
 import { UserRole } from "../../../src/modules/orm/schema/enums/user-role.js";
+import { JwtPayload } from "../../../src/modules/auth/strategies/jwt.strategy.js";
 
-describe("JwtPayload", () => {
+describe("GetJwtPayload", () => {
   let mockExecutionContext: ExecutionContext;
   let mockGetRequest: Mock;
 
@@ -22,7 +22,7 @@ describe("JwtPayload", () => {
   });
 
   it("should extract and return the jwt payload from the request", () => {
-    const jwtPayload: TJwtPayload = {
+    const jwtPayload: JwtPayload = {
       sub: "a1",
       roles: [UserRole.USER],
       username: "anything",

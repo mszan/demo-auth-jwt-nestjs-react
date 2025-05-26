@@ -4,7 +4,7 @@ import { type JwtPayload as TJwtPayload } from "../strategies/jwt.strategy.js";
 
 // extracted due to better testability, ideally this should be tested with e2e or integration tests
 export const decoratorCallback = (ctx: ExecutionContext): TJwtPayload => {
-  const logger = new Logger(JwtPayload.name);
+  const logger = new Logger(GetJwtPayload.name);
 
   const req = ctx.switchToHttp().getRequest();
   const jwtPayload: TJwtPayload = req.user;
@@ -22,6 +22,6 @@ export const decoratorCallback = (ctx: ExecutionContext): TJwtPayload => {
 /**
  * todo: add description
  */
-export const JwtPayload = createParamDecorator((_, ctx) => {
+export const GetJwtPayload = createParamDecorator((_, ctx) => {
   return decoratorCallback(ctx);
 });

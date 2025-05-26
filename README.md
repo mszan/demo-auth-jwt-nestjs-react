@@ -2,16 +2,15 @@
 
 # todo
 
--   review deps
--   add tests
--   rethink certificates
--   rework vsc tasks
--   cicd tests
--   add note about stuck vitest ui ports
--   http-only cookie
--   token blacklist note
--   user active state note
--   cleanup mocks in tests
+-   docs
+    -   setup
+    -   staging / prod
+    -   add note about http-only cookie instead of local storage
+    -   add note about token blacklist
+    -   add note about frontend state (in general)
+    -   add note about user being active
+    -   add note about git branches, git commits, and git tags
+-   add tests to ci/cd
+-   review mocking setup in the tests
 -   make initial migrations
--   package version cleanup, upgrade
--   add refresh func to frontend
+-   add refresh token functionality to the frontend

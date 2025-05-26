@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for auth/guards/jwt.guard.ts</title>
+    <title>Code coverage report for auth/strategies/jwt-refresh.strategy.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">auth/guards</a> jwt.guard.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">auth/strategies</a> jwt-refresh.strategy.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>36/36</span>
+                <span class='fraction'>50/50</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>36/36</span>
+                <span class='fraction'>50/50</span>
             </div>
         
             
@@ -130,7 +130,33 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,13 +164,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,116 +171,139 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
-  CanActivate,
-  ExecutionContext,
-  Inject,
-  Injectable,
-  Logger,
-} from "@nestjs/common";
-import { Reflector } from "@nestjs/core";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Inject, Injectable, Logger } from "@nestjs/common";
+import { PassportStrategy } from "@nestjs/passport";
+import { ExtractJwt, Strategy } from "passport-jwt";
+import { ConfigService } from "../../config/services/config.service.js";
+import { AuthService } from "../auth.service.js";
+import { UserEntityRepository } from "../../orm/schema/repositories/user.repository.js";
+import { Request } from "express";
 import {
   ForbiddenException,
-  JwtMalformedException,
   UnauthorizedException,
 } from "../../app/exceptions/exceptions.js";
-import { ROLES_KEY } from "../decorators/require-roles.decorator.js";
-import { UserRole } from "../../orm/schema/enums/user-role.js";
-import { JwtPayload } from "../strategies/jwt.strategy.js";
+import bcrypt from "bcrypt";
+import { UserEntity } from "../../orm/schema/entities/user.entity.js";
+&nbsp;
+export type JwtRefreshPayload = {
+  /** subject - user uuid in this case */
+  sub: string;
+};
+&nbsp;
+const jwtExtractor = ExtractJwt.fromAuthHeaderAsBearerToken(); // todo: a bit insecure, change the extractor
 &nbsp;
 /**
- * todo: add description, link to require-roles decorator
+ * This strategy is used to authenticate and authorize users using a JWT refresh token.
+ * Please note it should only authorize the user to get a new access token, not to access any actual resources.
  */
 @Injectable()
-export class JwtGuard implements CanActivate {
-  private logger = new Logger(JwtGuard.name);
+export class JwtRefreshStrategy extends PassportStrategy(
+  Strategy,
+  "jwt-refresh"
+) {
+  private readonly logger = new Logger(JwtRefreshStrategy.name);
 &nbsp;
-  constructor(@Inject(Reflector) private reflector: Reflector) {}
+  constructor(
+    @Inject(ConfigService) private readonly configService: ConfigService,
+    @Inject(UserEntityRepository)
+    private readonly userEntityRepository: UserEntityRepository
+  ) {
+    super({
+      jwtFromRequest: jwtExtractor,
+      secretOrKey: configService.get("auth.jwt.refreshToken.secret"),
+      passReqToCallback: true,
+    });
+  }
 &nbsp;
-  async canActivate(context: ExecutionContext): Promise&lt;boolean&gt; {
-    // get required roles from the route handler
-    const requiredRoles = this.reflector.getAllAndOverride&lt;UserRole[]&gt;(
-      ROLES_KEY,
-      [context.getHandler(), context.getClass()]
-    );
+  /**
+   * Passport first verifies the JWT's signature and decodes the JSON. It then invokes this method passing the decoded JSON as its single parameter.
+   * Based on the way JWT signing works, we're guaranteed that we're receiving a valid token that we have previously signed and issued to a valid user.
+   *
+   * As a result of all this, our response to the validate() callback is trivial: we simply return an object containing the payload.
+   * Recall again that Passport will build a user object based on the return value of our validate() method, and attach it as a property on the Request object.
+   */
+  async validate(
+    req: Request,
+    payload: JwtRefreshPayload
+  ): Promise&lt;UserEntity&gt; {
+    const userEntity = await this.userEntityRepository.findOne({
+      uuid: payload.sub,
+    });
 &nbsp;
-    // if no roles are required, let the user move on
-    if (!requiredRoles || requiredRoles.length === 0) {
-      return true;
+    if (!userEntity) {
+      this.logger.debug("User not found in the database.");
+      throw new ForbiddenException();
     }
 &nbsp;
-    const jwtPayload = context
-      .switchToHttp()
-      .getRequest&lt;Request &amp; { user: JwtPayload }&gt;().user;
-&nbsp;
-    // at this point we know that roles are required, so we need to check if the user actually has them
-&nbsp;
-    if (!jwtPayload) {
-      // should never happen due to password validating jwt in the corresponding strategy. doing it just in case
-      this.logger.debug("No JWT payload.");
-      throw new UnauthorizedException();
+    if (!userEntity.refreshToken) {
+      this.logger.debug("Refresh token not present in the database.");
+      throw new ForbiddenException();
     }
 &nbsp;
-    if (!jwtPayload.roles) {
-      this.logger.debug("No roles in JWT payload.");
-      throw new JwtMalformedException();
-    }
+    const rawRefreshToken = jwtExtractor(req)!; // we're sure the token is not null, see method description
 &nbsp;
-    // check if user has all required roles
-    if (!requiredRoles.every((role) =&gt; jwtPayload.roles.includes(role))) {
+    if (!(await bcrypt.compare(rawRefreshToken, userEntity.refreshToken))) {
       this.logger.debug(
-        `Roles in route handler: ${requiredRoles}. Roles in JWT payload: ${jwtPayload.roles}.`
+        "Provided refresh token does not match with the one stored in a database."
       );
       throw new ForbiddenException();
     }
 &nbsp;
-    // everything is fine, user has the required roles
-    return true;
+    return userEntity;
   }
 }
 &nbsp;</pre></td></tr></table></pre>

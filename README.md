@@ -12,3 +12,4 @@
 -   token blacklist note
 -   user active state note
 -   cleanup mocks in tests
+-   make initial migrations

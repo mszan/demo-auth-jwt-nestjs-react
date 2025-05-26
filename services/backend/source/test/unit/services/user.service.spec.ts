@@ -37,7 +37,6 @@ describe(UserService.name, () => {
     it("should return user dto", async () => {
       const userUuid = "a1";
       const userDto = await service.getUserDto(userUuid);
-      console.log(userDto);
       expect(userDto).toBeDefined();
       expect(userDto.uuid).toBe(userUuid);
     });

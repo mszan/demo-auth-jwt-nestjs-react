@@ -145,7 +145,7 @@ export class ConfigService {
           contact: {
             email: "dmszanowski@icloud.com",
             name: "Dawid Mszanowski",
-            url: "https://github.com/mszan/kraftcode-nestjs-auth-demo",
+            url: "https://github.com/mszan/kraftcode-auth-demo",
           },
           customOptions: {
             customCss: ".swagger-ui .topbar { display: none }",
@@ -192,9 +192,6 @@ export class ConfigService {
         password: process.env.DB_PASS,
         port: process.env.DB_PORT,
         user: process.env.DB_USER,
-      },
-      urls: {
-        frontend: "https://kraftapp.local.com",
       },
     };
   }

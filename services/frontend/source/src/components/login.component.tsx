@@ -11,7 +11,7 @@ type LoginFormFieldType = {
 
 export const Login: React.FC = () => {
   const navigate = useNavigate();
-  const { login, user } = React.useContext(AuthContext);
+  const { login, jwtTokens } = React.useContext(AuthContext);
 
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -30,7 +30,7 @@ export const Login: React.FC = () => {
     }
   };
 
-  if (user) {
+  if (jwtTokens && jwtTokens.accessToken) {
     return <Navigate to="/" />;
   }
 
@@ -53,7 +53,7 @@ export const Login: React.FC = () => {
             </Typography.Title>
             <Typography.Paragraph>
               <Typography.Text>
-                An example app demonstrating JWT auth in Vite and NestJS
+                An example app demonstrating JWT auth
               </Typography.Text>
             </Typography.Paragraph>
           </div>

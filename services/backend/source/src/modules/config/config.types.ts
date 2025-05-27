@@ -56,9 +56,6 @@ export type Config = {
     port: string;
     user: string;
   };
-  urls: {
-    frontend: string;
-  };
 };
 
 // this should be in a shared lib or some other dir

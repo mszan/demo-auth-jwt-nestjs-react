@@ -115,9 +115,6 @@ export class ConfigService {
         port: Joi.string().required(),
         user: Joi.string().required(),
       }).required(),
-      urls: Joi.object({
-        frontend: Joi.string().required(),
-      }).required(),
     });
 
     return schema.validate(input, {

@@ -10,10 +10,10 @@ services:
       - ./services/frontend/source:/opt/source
       - ./services/frontend/entrypoint.dev.sh:/opt/entrypoint.dev.sh
     ports:
-      - 7030:5173
+      - 7030:5173 # vite dev server
       - 7031:9000 # node debugger
       - 7032:9001 # node debugger test
-      - 7033:4000 # vitest ui
+      - 7033:4000 # vitest ui server
 
   kraftapp-backend:
     image: node:lts
@@ -23,10 +23,10 @@ services:
       - ./services/backend/source:/opt/source
       - ./services/backend/entrypoint.dev.sh:/opt/entrypoint.dev.sh
     ports:
-      - 7010:3000
+      - 7010:3000 # backend server
       - 7011:9000 # node debugger
       - 7012:9001 # node debugger test
-      - 7013:4000 # vitest ui
+      - 7013:4000 # vitest ui server
 
   kraftapp-db:
     ports:

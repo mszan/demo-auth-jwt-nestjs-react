@@ -1,7 +1,6 @@
 import { HttpStatus } from "@nestjs/common";
 import { ApiProperty } from "@nestjs/swagger";
 
-// todo: add test case: fix swagger multiple responses for same http status code
 export type ExceptionData = {
   httpStatus: HttpStatus;
   exceptionCode: ExceptionCode;

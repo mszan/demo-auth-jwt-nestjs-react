@@ -1,23 +1,19 @@
 import { Inject, Injectable, Logger } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
-import { ExtractJwt, Strategy } from "passport-jwt";
-import { ConfigService } from "../../config/services/config.service.js";
-import { AuthService } from "../auth.service.js";
-import { UserEntityRepository } from "../../orm/schema/repositories/user.repository.js";
-import { Request } from "express";
-import {
-  ForbiddenException,
-  UnauthorizedException,
-} from "../../app/exceptions/exceptions.js";
 import bcrypt from "bcrypt";
+import { Request } from "express";
+import { ExtractJwt, Strategy } from "passport-jwt";
+import { ForbiddenException } from "../../app/exceptions/exceptions.js";
+import { ConfigService } from "../../config/services/config.service.js";
 import { UserEntity } from "../../orm/schema/entities/user.entity.js";
+import { UserEntityRepository } from "../../orm/schema/repositories/user.repository.js";
 
 export type JwtRefreshPayload = {
   /** subject - user uuid in this case */
   sub: string;
 };
 
-const jwtExtractor = ExtractJwt.fromAuthHeaderAsBearerToken(); // todo: a bit insecure, change the extractor
+const jwtExtractor = ExtractJwt.fromAuthHeaderAsBearerToken();
 
 /**
  * This strategy is used to authenticate and authorize users using a JWT refresh token.

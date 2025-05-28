@@ -5,8 +5,6 @@ import { AppModule } from "./modules/app/app.module.js";
 import { allExceptions } from "./modules/app/exceptions/exceptions.js";
 import { ConfigService } from "./modules/config/services/config.service.js";
 
-// todo: cleanup
-
 async function bootstrap(): Promise<void> {
   const configService = new ConfigService();
 

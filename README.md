@@ -15,6 +15,12 @@
 
 A simple demo project using NestJS and React, showcasing JWT-based authentication with a focus on modularity and scalability.
 
+See it live:
+
+-   [Backend](https://kraftapp-api.mszanowski.com)
+-   [Backend (docs)](https://kraftapp-api.mszanowski.com/docs)
+-   [Frontend](https://kraftapp.mszanowski.com)
+
 ## Architecture
 
 This project is built using a microservices architecture, leveraging NestJS for the backend and React with Vite for the frontend. Although it's structured more like a monorepo, it maintains a clear separation of concerns between each service. It's relatively easy to split this repository into smaller parts or add other independent services (e.g. with git submodules) without affecting the overall functionality.

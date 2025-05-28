@@ -151,7 +151,7 @@ You can also build and run production-ready images of each service using the fol
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build # make sure not to use the override file
 ```
 
-**Note:** `docker-compose.prod.yml` file is not included in the repository, as it contains sensitive information and is meant to be used in production only. You can create your own version of this file based on the `docker-compose.override.yml` file, but make sure to adjust the settings to fit your production environment. The production image should be slimmed down to only include the necessary dependencies and files, removing any development dependencies, test files, and other unnecessary files. It should also run the services in production mode, which may include enabling optimizations, disabling development features.
+Please threat the `docker-compose.prod.yml` file as a working template. Copy it to `docker-compose.override.yml` and adjust it to your needs. You can also use it as a starting point for your own production setup, but keep in mind that it is not a complete solution and may require additional configuration and setup.
 
 ## What's missing
 

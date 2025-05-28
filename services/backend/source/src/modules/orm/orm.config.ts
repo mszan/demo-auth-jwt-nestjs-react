@@ -7,7 +7,7 @@ import { NodeEnv } from "../config/config.types.js";
 const logger = new Logger(`ORM`);
 const configService = new ConfigService();
 
-const entitiesPath = "/opt/source/dist/src/modules/orm/schema/entities/**/*.js";
+const entitiesPath = "/opt/source/dist/modules/orm/schema/entities/**/*.js";
 const entitiesTsPath = import.meta.dirname + "/schema/entities/**/*.ts";
 logger.debug(`${Object.keys({ entitiesPath })[0]}: ${entitiesPath}`);
 logger.debug(`${Object.keys({ entitiesTsPath })[0]}: ${entitiesTsPath}`);

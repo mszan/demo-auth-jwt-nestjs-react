@@ -76,13 +76,24 @@ docker compose up --build
 
 You may want to add the `-d` flag to run the containers in detached mode, allowing you to continue using your terminal while the services are running. If you want to force recreation of the containers, you can add the `--force-recreate` flag.
 
-#### Running the migrations
+#### Setting up the database
 
 After the services are up and running, you need to run the database migrations to set up the initial database schema. Approach to the migrations will be adjusted in the nearest future as the project evolves, but for now you can run the following command to apply all pending migrations.
 
 ```bash
 docker compose exec kraftapp-backend npx mikro-orm-esm migration:up
-docker compose restart kraftapp-backend # to ensure the backend service picks up the changes
+```
+
+Besides that, you can also seed the database with some initial data, such as admin user, roles, etc. This is useful for testing purposes and to have a working application out of the box. You can run the following command to seed the database:
+
+```bash
+docker compose exec kraftapp-backend npx mikro-orm-esm seeder:run
+```
+
+If the backend service didn't trigger the hot reload, you can manually restart the container to ensure that the changes are picked up:
+
+```bash
+docker compose restart kraftapp-backend
 ```
 
 #### Testing

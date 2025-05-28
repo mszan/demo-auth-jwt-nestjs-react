@@ -10,7 +10,6 @@ import { mock } from "vitest-mock-extended";
 import httpMocks from "node-mocks-http";
 import { ForbiddenException } from "../../../src/modules/app/exceptions/exceptions.js";
 import { UserEntity } from "../../../src/modules/orm/schema/entities/user.entity.js";
-import { AuthService } from "../../../src/modules/auth/auth.service.js";
 import bcrypt from "bcrypt";
 
 const mockConfigService = {

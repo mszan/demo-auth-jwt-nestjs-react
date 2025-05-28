@@ -13,24 +13,13 @@
     <img src="https://img.shields.io/badge/JWT-000000.svg?style=flat-square&logo=JSON%20web%20tokens&logoColor=white" alt="JWT">
 </p>
 
-A simple authentication demo using NestJS and React, showcasing JWT-based authentication with a focus on modularity and scalability.
-
-Key features:
-
--   Full-stack TypeScript implementation with ESM modules
--   Containerized microservices architecture using Docker
--   Backend built with NestJS, Mikro-ORM, and Passport.js
--   Frontend built with React, Vite, and Ant Design
--   PostgreSQL database for data persistence
--   Comprehensive test coverage with Vitest
--   OpenAPI documentation generation with Swagger
--   Development environment with hot-reloading and debugging support
+A simple demo project using NestJS and React, showcasing JWT-based authentication with a focus on modularity and scalability.
 
 ## Architecture
 
 This project is built using a microservices architecture, leveraging NestJS for the backend and React with Vite for the frontend. Although it's structured more like a monorepo, it maintains a clear separation of concerns between each service. It's relatively easy to split this repository into smaller parts or add other independent services (e.g. with git submodules) without affecting the overall functionality.
 
-As mentioned, every service works independently, allowing for modular development and deployment, even in big teams. Each service can be developed, tested, deployed, and scaled independently, which is a key advantage of this architecture. For the simplicity of this demo, we're utilizing Docker and Docker Compose. In a real world scenario, we'd likely use a more complex orchestration tool like Kubernetes (e.g. with ArgoCD), preferably over a cloud provider like AWS, GCP, or Azure. We'd also use a CI/CD pipeline to fully automate the deployment process, ensuring that each service can be deployed independently without affecting the others, also allowing for rolling updates and zero downtime deployments. We may also consider extracting some services into cloud (e.g RDS for databases, S3 for file storage, SQS for message queues etc.) to further enhance scalability and reliability.
+As mentioned, every service works independently, allowing for modular development and deployment, even in large teams. Each service can be developed, tested, deployed, and scaled independently, which is a key advantage of this architecture. For the simplicity of this demo, we're utilizing Docker and Docker Compose. In a real world scenario, we'd likely use a more complex orchestration tool like Kubernetes (e.g. with ArgoCD), preferably over a cloud provider like AWS, GCP, or Azure. We'd also use a CI/CD pipeline to fully automate the deployment process, ensuring that each service can be deployed independently without affecting the others, also allowing for rolling updates and zero downtime deployments. We may also consider extracting some services into cloud (e.g RDS for databases, S3 for file storage, SQS for message queues etc.) to further enhance scalability and reliability.
 
 Services that may want to use shared code (e.g. shared types, interfaces, configurations, etc.) may want to implement a shared library, which can be easily imported into each service. This allows for easy sharing of code between services, while still maintaining the modularity and independence of each service. The shared library can be developed, tested, and deployed independently, allowing for easy updates and changes without affecting the other services. Most reliable way to do this would be to use git submodules or to create a separate shared service.
 
@@ -62,10 +51,10 @@ The general idea is to use Docker Compose to run all services in separate contai
 
 #### Setting up the environment variables
 
-You need to set up the environment variables for each service. You can find the example environment variables in the `.env.example` file in each service directory. Simply copying the `.env.example` file to `.env` should be enough to get started. However, you may want to adjust some of the values to fit your local environment, such as database connection settings, JWT secret, etc. **The `.env` file should NEVER be committed to the repository, as it contains sensitive information.**.
+You need to set up the environment variables for each service. You can find the example environment variables in the `.env.template` file in each service directory. Simply copying the `.env.template` file to `.env` should be enough to get started. However, you may want to adjust some of the values to fit your local environment, such as database connection settings, JWT secret, etc. **The `.env` file should NEVER be committed to the repository, as it contains sensitive information.**.
 
 ```bash
-cp .env.example .env
+cp .env.template .env
 ```
 
 #### Setting up the Docker Compose override file
@@ -85,12 +74,15 @@ To build and run the project, you can use the following command:
 docker compose up --build
 ```
 
+You may want to add the `-d` flag to run the containers in detached mode, allowing you to continue using your terminal while the services are running. If you want to force recreation of the containers, you can add the `--force-recreate` flag.
+
 #### Running the migrations
 
 After the services are up and running, you need to run the database migrations to set up the initial database schema. Approach to the migrations will be adjusted in the nearest future as the project evolves, but for now you can run the following command to apply all pending migrations.
 
 ```bash
 docker compose exec kraftapp-backend npx mikro-orm-esm migration:up
+docker compose restart kraftapp-backend # to ensure the backend service picks up the changes
 ```
 
 #### Testing
@@ -98,8 +90,8 @@ docker compose exec kraftapp-backend npx mikro-orm-esm migration:up
 There are predefined node scripts in each service's `package.json` that can be used to run variety of tests, such as unit tests, integration tests, and end-to-end tests. This should also be relatively easy to create a simple shell script to handle all the testing. For now, since the testing setup is not as complex as intended, you can run all the tests for a particular service with a single command:
 
 ```bash
-docker compose exec kraftapp-backend npm run test
-docker compose exec kraftapp-frontend npm run test
+docker compose exec kraftapp-backend npm run test:watch
+docker compose exec kraftapp-frontend npm run test:watch
 ```
 
 There's also a Vitest UI that, once started (with the script above), can be accessed via the browser at `http://localhost:<port>/__vitest__`. If you don't know what's your `port`, see `docker-compose.override.yml` you've just created. You can use this tool to also trigger all or individual tests manually, view test results, see the coverage and debug your tests.
@@ -114,6 +106,24 @@ If you're using VSC, you can use the predefined launch configurations in the [.v
 
 You can use your IDE's built-in debugger to set breakpoints and step through the code. The services are also configured to automatically reload when you make changes to the code, allowing for a smooth development experience.
 
+#### Helpful links and commands
+
+To access any of the services "by hand", see the `docker-compose.override.yml` file for the ports that are exposed to the host machine. Use appropriate client (e.g. Postman, cURL, browser, pgclient, etc.) to access the services. For example, you can access the frontend service in your browser at `http://localhost:7030`, the backend service's Swagger at `http://localhost:7010/api/docs` or the database service with a PostgreSQL client at `postgres://kraftapp_user:kraftapp_pass@localhost:5432/kraftapp_db`.
+
+##### Documentation
+
+-   [Docker documentation](https://docs.docker.com/)
+-   [Docker Compose documentation](https://docs.docker.com/compose/)
+-   [NestJS documentation](https://docs.nestjs.com/)
+-   [React documentation](https://react.dev/)
+-   [Vitest documentation](https://vitest.dev/)
+-   [Ant Design documentation](https://ant.design/docs/react/introduce)
+-   [PostgreSQL documentation](https://www.postgresql.org/docs/)
+-   [OpenAPI documentation](https://swagger.io/docs/specification/about/)
+-   [Passport.js documentation](http://www.passportjs.org/docs/)
+-   [JWT documentation](https://jwt.io/introduction/)
+-   [TypeScript documentation](https://www.typescriptlang.org/docs/)
+
 ### Staging and Production
 
 In a real world scenario we would use a more complex orchestration tool like Kubernetes and a CI/CD pipeline to fully automate the deployment process. However, for the simplicity of this demo, I've had deployed the whole project to a single VPS instance using Docker and Docker Compose. The whole project lies behind a reverse proxy (Nginx) and is accessible via HTTPS. The database service is not exposed to the public, but can be accessed by the backend service.
@@ -123,6 +133,12 @@ Use these links to access the deployed services:
 -   [Backend](https://kraftapp-api-stg.mszanowski.com)
 -   [Backend (docs)](https://kraftapp-api-stg.mszanowski.com/api/docs)
 -   [Frontend](https://kraftapp-stg.mszanowski.com)
+
+You can also build and run production-ready images of each service using the following command:
+
+```bash
+docker compose -f docker-compose.yml up --build # make sure not to use the override file
+```
 
 ## What's missing
 

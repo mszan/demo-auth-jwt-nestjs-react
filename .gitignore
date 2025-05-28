@@ -4,7 +4,6 @@
 
 # Docker
 docker-compose.override.yml
-docker-compose.prod.yml
 
 # Node.js dependencies and build artifacts
 node_modules

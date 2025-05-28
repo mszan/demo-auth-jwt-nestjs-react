@@ -141,9 +141,9 @@ In a real world scenario we would use a more complex orchestration tool like Kub
 
 Use these links to access the deployed services:
 
--   [Backend](https://kraftapp-api-stg.mszanowski.com)
--   [Backend (docs)](https://kraftapp-api-stg.mszanowski.com/api/docs)
--   [Frontend](https://kraftapp-stg.mszanowski.com)
+-   [Backend](https://kraftapp-api.mszanowski.com)
+-   [Backend (docs)](https://kraftapp-api.mszanowski.com/docs)
+-   [Frontend](https://kraftapp.mszanowski.com)
 
 You can also build and run production-ready images of each service using the following command:
 

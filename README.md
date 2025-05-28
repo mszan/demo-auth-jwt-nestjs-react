@@ -25,7 +25,7 @@ Services that may want to use shared code (e.g. shared types, interfaces, config
 
 ### Backend
 
-Built using NestJS, alongside with TypeScript and ESM. It is responsible for handling authentication, user management, and other core functionalities. It uses Mikro-ORM as its ORM library, providing strict and powerful, yet relatively simple to use way to interact with most of the leading databases. It serves a documentation website (Swagger) with automatically generated OpenAPI specification based on code annotations. The service utilizes Passport.js, implementing JWT-based authentication and authorization, also with the token refresh functionality. The backend service itself is structured into modules, each responsible for a specific functionality (e.g. authentication, user management, etc.). This modularity allows for easy maintenance and scalability of this particular service, while also allowing for easy integration with other services in the future. It should also be relatively easy to split this main (for now) service into smaller, independent services, each responsible for a specific functionality (e.g. authentication, user management, etc.). This would allow for even greater modularity and scalability, as each service could be developed, tested, deployed, and scaled independently. The service is designed to be stateless, allowing for horizontal scaling and easy deployment in cloud environments. It is also designed to be easily testable, with unit and integration tests. Altough the coverage is nearly 100%, in a real world scenario we would also add end-to-end and performance tests within the CI/CD pipeline to ensure the reliability and performance of the service. It's worth mentioning that Vitest was choosed over Jest mostly due to compatibility with ESM, but also because of its performance and simplicity, it's also possible to use it in frontend apps.
+Built using NestJS, alongside with TypeScript and ESM. It is responsible for handling authentication and authorization, user management, and other core functionalities. It uses Mikro-ORM as its ORM library, providing strict and powerful, yet relatively simple to use way to interact with most of the leading databases. It serves a documentation website (Swagger) with automatically generated OpenAPI specification based on code annotations. The service utilizes Passport.js, implementing JWT-based authentication and authorization, also with the token refresh functionality. The backend service itself is structured into modules, each responsible for a specific functionality (e.g. `auth`, `user`, `config` etc.). This modularity allows for easy maintenance and scalability of this particular service, while also allowing for easy integration with other services in the future. It should also be relatively easy to split this main (for now) service into smaller, independent services, each responsible for a specific functionality. This would allow for even greater modularity and scalability, as each service could be developed, tested, deployed, and scaled independently. The service is designed to be stateless, allowing for horizontal scaling and easy deployment in cloud environments. It is also designed to be easily testable, with unit and integration tests. Altough the coverage is nearly 100%, in a real world scenario we would also add end-to-end and performance tests and include all of them within the CI/CD pipeline to ensure the reliability and performance of each service. It's worth mentioning that Vitest was choosed over Jest mostly due to compatibility with ESM, but also because of its performance and simplicity. It's also possible to use it in frontend apps, so the stack remains more consistent across the whole project.
 
 Detailed information about the service can be found in its [README](services/backend/README.md) file.
 
@@ -51,7 +51,7 @@ The general idea is to use Docker Compose to run all services in separate contai
 
 #### Setting up the environment variables
 
-You need to set up the environment variables for each service. You can find the example environment variables in the `.env.template` file in each service directory. Simply copying the `.env.template` file to `.env` should be enough to get started. However, you may want to adjust some of the values to fit your local environment, such as database connection settings, JWT secret, etc. **The `.env` file should NEVER be committed to the repository, as it contains sensitive information.**.
+You need to set up the environment variables for each service. You can find the example environment variables in the `.env.template`. Simply copying the `.env.template` file to `.env` should be enough to get started. However, you may want to adjust some of the values to fit your local environment, such as database connection settings, JWT secret, etc. **The `.env` file should NEVER be committed to the repository, as it contains sensitive information.**.
 
 ```bash
 cp .env.template .env
@@ -74,7 +74,7 @@ To build and run the project, you can use the following command:
 docker compose up --build
 ```
 
-You may want to add the `-d` flag to run the containers in detached mode, allowing you to continue using your terminal while the services are running. If you want to force recreation of the containers, you can add the `--force-recreate` flag.
+You may want to add the `-d` flag to run the containers in detached mode. If you want to force recreation of the containers, you can add the `--force-recreate` flag.
 
 #### Setting up the database
 
@@ -90,7 +90,7 @@ Besides that, you can also seed the database with some initial data, such as adm
 docker compose exec kraftapp-backend npx mikro-orm-esm seeder:run
 ```
 
-If the backend service didn't trigger the hot reload, you can manually restart the container to ensure that the changes are picked up:
+If the backend service didn't trigger the hot reload at this point, you can manually restart the container to ensure that the database-related changes are picked up:
 
 ```bash
 docker compose restart kraftapp-backend
@@ -111,7 +111,7 @@ If you're using VSC, you can use the predefined tasks in the [.vscode/tasks.json
 
 #### Debugging
 
-Each service is configured to run in watch mode, allowing for live reloading during development which is sufficient in most cases. However, you can also use the debugger if needed. For that, simply attach your debugger to the running service, that's it. Each service is configured to expose the debugging port which you can find in the `docker-compose.override.yml` file.
+Each service is configured to run in watch mode, allowing for live reloading during development which is sufficient in most cases. However, you can also use the debugger if needed. For that, simply attach your debugger to the running service, that's it. Each service is already configured to expose the debugging port which you can find in the `docker-compose.override.yml` file.
 
 If you're using VSC, you can use the predefined launch configurations in the [.vscode/launch.json](.vscode/launch.json) file.
 
@@ -135,9 +135,9 @@ To access any of the services "by hand", see the `docker-compose.override.yml` f
 -   [JWT documentation](https://jwt.io/introduction/)
 -   [TypeScript documentation](https://www.typescriptlang.org/docs/)
 
-### Staging and Production
+### Production
 
-In a real world scenario we would use a more complex orchestration tool like Kubernetes and a CI/CD pipeline to fully automate the deployment process. However, for the simplicity of this demo, I've had deployed the whole project to a single VPS instance using Docker and Docker Compose. The whole project lies behind a reverse proxy (Nginx) and is accessible via HTTPS. The database service is not exposed to the public, but can be accessed by the backend service.
+In a real world scenario we would use a more complex orchestration tool like Kubernetes and a CI/CD pipeline to fully automate the deployment process. We could also introduce additional environments like staging, pre-prod etc. However, for the simplicity of this demo, I've had deployed the whole project to a single VPS instance using Docker and Docker Compose. The whole project lies behind a reverse proxy (Nginx) and is accessible via HTTPS. The database service is not exposed to the public, but can be accessed by the backend service.
 
 Use these links to access the deployed services:
 
@@ -156,7 +156,6 @@ docker compose -f docker-compose.yml up --build # make sure not to use the overr
 Due to the fact that this is a demo project, there are some features that are not implemented yet, but are planned for the future. These features are not critical for the authentication flow, but would enhance the overall security and usability of the application. Some of them are:
 
 -   Orchestration tool like Kubernetes for managing the services in production. This would allow for easier scaling, rolling updates, and zero downtime deployments. It would also allow for better resource management and monitoring of the services.
--   More advanced authentication methods, such as OAuth2 or OpenID Connect. This would allow for easier integration with third-party services and provide a more secure authentication flow.
 -   Utilization of http-only cookies instead of local storage for storing JWT tokens in the frontend service. This is a more secure way to store tokens, as it prevents XSS attacks from accessing the tokens.
 -   Token blacklist functionality to prevent the use of revoked tokens. This is a key feature for ensuring the security of the application, as it allows for immediate revocation of tokens in case of a security breach.
 -   Convention for managing git branches, commits, and tags. This is important for maintaining a clean and organized codebase, especially in larger teams. It would also allow for easier collaboration and code reviews.
@@ -165,3 +164,4 @@ Due to the fact that this is a demo project, there are some features that are no
 -   More comprehensive tests, including end-to-end and performance tests. This would ensure that the application is reliable and performs well under load.
 -   Extended access policies for the user roles. This would allow for more granular control over what users can do in the application, enhancing security and usability.
 -   User activity tracking to determine if a user is active or not. This would allow for better user experience and security, as it would allow for automatic logout of inactive users.
+-   (Frontend only) Refresh token functionality to allow users to stay logged in for longer periods of time without having to re-enter their credentials.

@@ -2,7 +2,7 @@ networks:
   public: null
 
 services:
-  kraftapp-frontend:
+  demo-frontend:
     image: node:lts
     working_dir: /opt/source
     entrypoint: "/opt/entrypoint.dev.sh"
@@ -15,7 +15,7 @@ services:
       - 7032:9001 # node debugger test
       - 7033:4000 # vitest ui server
 
-  kraftapp-backend:
+  demo-backend:
     image: node:lts
     entrypoint: "/opt/entrypoint.dev.sh"
     working_dir: /opt/source
@@ -28,6 +28,6 @@ services:
       - 7012:9001 # node debugger test
       - 7013:4000 # vitest ui server
 
-  kraftapp-db:
+  demo-db:
     ports:
       - "7020:${DB_PORT}"

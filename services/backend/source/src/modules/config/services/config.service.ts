@@ -142,11 +142,11 @@ export class ConfigService {
           contact: {
             email: "dmszanowski@icloud.com",
             name: "Dawid Mszanowski",
-            url: "https://github.com/mszan/kraftcode-auth-demo",
+            url: "https://github.com/mszan/demo-auth-jwt-nestjs-react",
           },
           customOptions: {
             customCss: ".swagger-ui .topbar { display: none }",
-            customSiteTitle: "kraftapp api - docs",
+            customSiteTitle: "demo api - docs",
             swaggerOptions: {
               operationsSorter: "alpha",
               persistAuthorization: true,
@@ -165,7 +165,7 @@ export class ConfigService {
             },
             user: { description: "Endpoints related to the user entity." },
           },
-          title: "kraftapp api",
+          title: "demo api",
           url: "docs",
         },
         version: "1.0.0",

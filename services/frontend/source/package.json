@@ -1,5 +1,5 @@
 {
-  "name": "kraftapp-frontend",
+  "name": "demo-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test:watch": "vitest --api.port 4000 --coverage --ui",
-    "generate": "openapi --input http://kraftapp-backend:3000/docs-json --output ./src/client/generated"
+    "generate": "openapi --input http://demo-backend:3000/docs-json --output ./src/client/generated"
   },
   "dependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",

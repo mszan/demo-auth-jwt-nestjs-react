@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "kraftapp-backend (for watch)",
+            "name": "demo-backend (for watch)",
             "type": "node",
             "address": "localhost",
             "port": 7011,
@@ -12,7 +12,7 @@
             "restart": true
         },
         {
-            "name": "kraftapp-backend (for test)",
+            "name": "demo-backend (for test)",
             "type": "node",
             "address": "localhost",
             "port": 7012,
@@ -22,7 +22,7 @@
             "restart": true
         },
         {
-            "name": "kraftapp-frontend (launch chrome)",
+            "name": "demo-frontend (launch chrome)",
             "request": "launch",
             "type": "chrome",
             "url": "http://localhost:7031",

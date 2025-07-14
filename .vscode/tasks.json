@@ -5,13 +5,13 @@
         {
             "type": "shell",
             "label": "backend/test:watch",
-            "command": "open http://localhost:7013/__vitest__/ && docker exec -it kraftapp-backend npm run test:watch",
+            "command": "open http://localhost:7013/__vitest__/ && docker exec -it demo-backend npm run test:watch",
             "group": "test"
         },
         {
             "type": "shell",
             "label": "backend/type-check",
-            "command": "docker exec kraftapp-backend npm run type-check",
+            "command": "docker exec demo-backend npm run type-check",
             "group": "build"
         },
 
@@ -19,13 +19,13 @@
         {
             "type": "shell",
             "label": "frontend/test:watch",
-            "command": "open http://localhost:7033/__vitest__/ && docker exec -it kraftapp-frontend npm run test:watch",
+            "command": "open http://localhost:7033/__vitest__/ && docker exec -it demo-frontend npm run test:watch",
             "group": "test"
         },
         {
             "type": "shell",
             "label": "frontend/generate-api-spec",
-            "command": "docker exec kraftapp-frontend npm run generate",
+            "command": "docker exec demo-frontend npm run generate",
             "group": "none"
         }
     ]

@@ -30,14 +30,14 @@ export const configs: Configs = {
   },
   staging: {
     urls: {
-      frontend: "https://kraftapp-stg.mszanowski.com",
-      backend: "https://kraftapp-api-stg.mszanowski.com",
+      frontend: "https://demo-auth-stg.mszanowski.com",
+      backend: "https://demo-auth-api-stg.mszanowski.com",
     },
   },
   production: {
     urls: {
-      frontend: "https://kraftapp.mszanowski.com",
-      backend: "https://kraftapp-api.mszanowski.com",
+      frontend: "https://demo-auth.mszanowski.com",
+      backend: "https://demo-auth-api.mszanowski.com",
     },
   },
 };

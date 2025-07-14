@@ -49,7 +49,7 @@ export const Login: React.FC = () => {
                 fontStretch: "expanded",
               }}
             >
-              KRAFTAPP
+              DEMO
             </Typography.Title>
             <Typography.Paragraph>
               <Typography.Text>

@@ -1,4 +1,4 @@
-# KraftCode Auth Demo
+# `demo-auth-jwt-nestjs-react`
 
 <p align="left">
     <img src="https://img.shields.io/badge/Node.js-339933.svg?style=flat-square&logo=Node.js&logoColor=white" alt="Node.js">
@@ -17,9 +17,9 @@ A simple demo project using NestJS and React, showcasing JWT-based authenticatio
 
 See it live:
 
--   [Backend](https://kraftapp-api.mszanowski.com)
--   [Backend (docs)](https://kraftapp-api.mszanowski.com/docs)
--   [Frontend](https://kraftapp.mszanowski.com)
+-   [Backend](https://demo-auth.mszanowski.com)
+-   [Backend (docs)](https://demo-auth.mszanowski.com/docs)
+-   [Frontend](https://demo-auth.mszanowski.com)
 
 ## Architecture
 
@@ -87,19 +87,19 @@ You may want to add the `-d` flag to run the containers in detached mode. If you
 After the services are up and running, you need to run the database migrations to set up the initial database schema. Approach to the migrations will be adjusted in the nearest future as the project evolves, but for now you can run the following command to apply all pending migrations.
 
 ```bash
-docker compose exec kraftapp-backend npx mikro-orm-esm migration:up
+docker compose exec demo-backend npx mikro-orm-esm migration:up
 ```
 
 Besides that, you can also seed the database with some initial data, such as admin user, roles, etc. This is useful for testing purposes and to have a working application out of the box. You can run the following command to seed the database:
 
 ```bash
-docker compose exec kraftapp-backend npx mikro-orm-esm seeder:run
+docker compose exec demo-backend npx mikro-orm-esm seeder:run
 ```
 
 If the backend service didn't trigger the hot reload at this point, you can manually restart the container to ensure that the database-related changes are picked up:
 
 ```bash
-docker compose restart kraftapp-backend
+docker compose restart demo-backend
 ```
 
 #### Testing
@@ -107,8 +107,8 @@ docker compose restart kraftapp-backend
 There are predefined node scripts in each service's `package.json` that can be used to run variety of tests, such as unit tests, integration tests, and end-to-end tests. This should also be relatively easy to create a simple shell script to handle all the testing. For now, since the testing setup is not as complex as intended, you can run all the tests for a particular service with a single command:
 
 ```bash
-docker compose exec kraftapp-backend npm run test:watch
-docker compose exec kraftapp-frontend npm run test:watch
+docker compose exec demo-backend npm run test:watch
+docker compose exec demo-frontend npm run test:watch
 ```
 
 There's also a Vitest UI that, once started (with the script above), can be accessed via the browser at `http://localhost:<port>/__vitest__`. If you don't know what's your `port`, see `docker-compose.override.yml` you've just created. You can use this tool to also trigger all or individual tests manually, view test results, see the coverage and debug your tests.
@@ -125,7 +125,7 @@ You can use your IDE's built-in debugger to set breakpoints and step through the
 
 #### Helpful links and commands
 
-To access any of the services "by hand", see the `docker-compose.override.yml` file for the ports that are exposed to the host machine. Use appropriate client (e.g. Postman, cURL, browser, pgclient, etc.) to access the services. For example, you can access the frontend service in your browser at `http://localhost:7030`, the backend service's Swagger at `http://localhost:7010/api/docs` or the database service with a PostgreSQL client at `postgres://kraftapp_user:kraftapp_pass@localhost:5432/kraftapp_db`.
+To access any of the services "by hand", see the `docker-compose.override.yml` file for the ports that are exposed to the host machine. Use appropriate client (e.g. Postman, cURL, browser, pgclient, etc.) to access the services. For example, you can access the frontend service in your browser at `http://localhost:7030`, the backend service's Swagger at `http://localhost:7010/api/docs` or the database service with a PostgreSQL client at `postgres://demo_user:demo_pass@localhost:5432/demo_db`.
 
 ##### Documentation
 
@@ -147,9 +147,9 @@ In a real world scenario we would use a more complex orchestration tool like Kub
 
 Use these links to access the deployed services:
 
--   [Backend](https://kraftapp-api.mszanowski.com)
--   [Backend (docs)](https://kraftapp-api.mszanowski.com/docs)
--   [Frontend](https://kraftapp.mszanowski.com)
+-   [Backend](https://demo-auth-api.mszanowski.com)
+-   [Backend (docs)](https://demo-auth-api.mszanowski.com/docs)
+-   [Frontend](https://demo-auth.mszanowski.com)
 
 You can also build and run production-ready images of each service using the following command:
 

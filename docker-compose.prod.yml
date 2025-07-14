@@ -2,22 +2,22 @@ networks:
   public: null
 
 services:
-  kraftapp-frontend:
+  demo-frontend:
     build:
       context: ./services/frontend
       dockerfile: Dockerfile.prod
       args:
         VITE_HOST_ENV: ${FRONTEND_VITE_HOST_ENV}
-    image: kraftapp-frontend
+    image: demo-frontend
     working_dir: /opt/source
     ports:
       - 7030:80 # serve server
 
-  kraftapp-backend:
+  demo-backend:
     build:
       context: ./services/backend
       dockerfile: Dockerfile.prod
-    image: kraftapp-backend
+    image: demo-backend
     working_dir: /opt/source
     ports:
       - 7010:3000 # backend server

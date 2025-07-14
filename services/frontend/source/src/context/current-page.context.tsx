@@ -22,9 +22,9 @@ export const CurrentPageContextProvider = ({ children }: any) => {
   const setTitle = (text: string) => {
     const isBot = isbot(navigator.userAgent);
     if (isBot) {
-      document.title = `KRAFTAPP`;
+      document.title = `DEMO`;
     } else {
-      document.title = `kraftapp | ${text}`;
+      document.title = `demo | ${text}`;
       setTopBarTitle(text);
     }
   };

@@ -17,7 +17,7 @@ A simple demo project using NestJS and React, showcasing JWT-based authenticatio
 
 See it live:
 
--   [Backend](https://demo-auth-api.mszanowski.com)
+-   [Backend](https://demo-auth-api.mszanowski.com/healthcheck)
 -   [Backend (docs)](https://demo-auth-api.mszanowski.com/docs)
 -   [Frontend](https://demo-auth.mszanowski.com)
 

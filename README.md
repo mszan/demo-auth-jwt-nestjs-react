@@ -17,8 +17,8 @@ A simple demo project using NestJS and React, showcasing JWT-based authenticatio
 
 See it live:
 
--   [Backend](https://demo-auth.mszanowski.com)
--   [Backend (docs)](https://demo-auth.mszanowski.com/docs)
+-   [Backend](https://demo-auth-api.mszanowski.com)
+-   [Backend (docs)](https://demo-auth-api.mszanowski.com/docs)
 -   [Frontend](https://demo-auth.mszanowski.com)
 
 ## Architecture
@@ -144,12 +144,6 @@ To access any of the services "by hand", see the `docker-compose.override.yml` f
 ### Production
 
 In a real world scenario we would use a more complex orchestration tool like Kubernetes and a CI/CD pipeline to fully automate the deployment process. We could also introduce additional environments like staging, pre-prod etc. However, for the simplicity of this demo, I've had deployed the whole project to a single VPS instance using Docker and Docker Compose. The whole project lies behind a reverse proxy (Nginx) and is accessible via HTTPS. The database service is not exposed to the public, but can be accessed by the backend service.
-
-Use these links to access the deployed services:
-
--   [Backend](https://demo-auth-api.mszanowski.com)
--   [Backend (docs)](https://demo-auth-api.mszanowski.com/docs)
--   [Frontend](https://demo-auth.mszanowski.com)
 
 You can also build and run production-ready images of each service using the following command:
 

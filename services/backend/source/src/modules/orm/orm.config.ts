@@ -15,7 +15,7 @@ logger.debug(`${Object.keys({ entitiesTsPath })[0]}: ${entitiesTsPath}`);
 const ormConfig = defineConfig({
   user: configService.get("database.user"),
   password: configService.get("database.password"),
-  dbName: configService.get("database.database"),
+  dbName: configService.get("database.name"),
   host: configService.get("database.host"),
   port: Number(configService.get("database.port")),
   driver: PostgreSqlDriver,

@@ -109,7 +109,7 @@ export class ConfigService {
         }).required(),
       }).required(),
       database: Joi.object({
-        database: Joi.string().required(),
+        name: Joi.string().required(),
         host: Joi.string().required(),
         password: Joi.string().required(),
         port: Joi.string().required(),
@@ -184,7 +184,7 @@ export class ConfigService {
         },
       },
       database: {
-        database: process.env.DB_NAME,
+        name: process.env.DB_NAME,
         host: process.env.DB_HOST,
         password: process.env.DB_PASS,
         port: process.env.DB_PORT,

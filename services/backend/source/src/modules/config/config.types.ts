@@ -50,7 +50,7 @@ export type Config = {
     };
   };
   database: {
-    database: string;
+    name: string;
     host: string;
     password: string;
     port: string;
